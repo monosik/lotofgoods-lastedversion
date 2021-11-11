@@ -13,7 +13,7 @@ const Container = styled.div`
   position: sticky;
   top: 0;
   position: -webkit-sticky;
-  background: #F5CAC3;
+  background: #404040;
   z-index: 999;
   ${mobile({ height: "50px" })}
 `;
@@ -34,12 +34,13 @@ const Left = styled.div`
 `;
 
 const SearchContainer = styled.div`
-    border: 0.5px solid lightgray;
-    display: flex;
-    align-items: center;
-    margin-left: 25px;
-    padding: 5px;
-    background: #e5e5e5;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  padding: 5px;
+  background: white;
 `;
 
 const Input = styled.input`
@@ -56,14 +57,16 @@ const Logo = styled.h1`
   font-weight: bold;
   cursor: pointer;
   textdecoration: "none";
-  color: "black";
+  color: #f6bd60;
   ${mobile({ fontSize: "24px" })};
-  a:link, a:visited{
-    color: black;
+  a:link,
+  a:visited {
+    color: #F6BD60;
     text-decoration: none;
   }
-  a:hover, a:active {
-    color: black;
+  a:hover,
+  a:active {
+    color: #F6BD60;
     text-decoration: none;
   }
 `;
@@ -92,8 +95,8 @@ const Navbar = () => {
         <Wrapper>
           <Left>
             <SearchContainer>
-              <Input placeholder="Search" />
-              <Search style={{ color: "gray", fontSize: 16 }} />
+              <Input placeholder="Search"/>
+              <Search style={{ color: "black", fontSize: 18 , marginLeft: 5}} />
             </SearchContainer>
           </Left>
           <Center>

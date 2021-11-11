@@ -33,7 +33,7 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f5fbfd;
+    background-color: rgba(255, 180, 34, 0.2);
     position: relative;
     &:hover ${Info}{
         opacity: 1;
@@ -41,16 +41,17 @@ const Container = styled.div`
 `;
 
 const Circle = styled.div`
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: white;
-    position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #f6bd60;
+  position: absolute;
 `;
 
 const Image = styled.img`
     height: 75%;
     z-index: 2;
+    border-radius: 5%;
 `;
 
 const Icon = styled.div`
@@ -68,8 +69,25 @@ const Icon = styled.div`
         transform: scale(1.1);
     }
 `;
-const Title = styled.h1`
-font-size: 50px`;
+
+const TitlePra = styled.h5`
+  font-size: 20px;
+  color: #404040;
+  text-align: bottom;
+  padding-top: 8px;
+  padding-left: 8px;
+`;
+
+const Info2 = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: bottom;
+  justify-content: bottom;
+  cursor: pointer;
+`;
+
 const Price = styled.span``;
 
 const Product = ({ item }) => {
@@ -80,33 +98,35 @@ const Product = ({ item }) => {
     useEffect(() => {
         const getProducts = async () => {
           try{
-          const res = await publicRequest.get("/products/find/" + id)
-          setProduct(res.data);
+          const res = await publicRequest.get("/products/find/")
+          setProduct(await res.data);
         }catch{}
         };
         getProducts()
       }, [id]);
 
     return (
-        <Container>
-            <Circle />
-            <Image src={item.img} />
-            <Title>{product.title}</Title>
-            <Price>{product.price}</Price>
-            <Info>
-                <Icon>
+      <Container>
+        <Circle />
+        <Image src={item.img} />
+        <Info2>
+          <TitlePra>{item.price} Baht</TitlePra>
+          {/* <TitlePra>{item.shipping} Baht</TitlePra> */}
+        </Info2>
+        <Info>
+          {/* <Icon>
                     <ShoppingCartOutlined />
-                </Icon>
-                <Icon>
-                    <Link to={`/productdetail/${item._id}`}>
-                    <SearchOutlined />
-                    </Link>
-                </Icon>
-                <Icon>
+                </Icon> */}
+          <Icon>
+            <Link to={`/productdetail/${item._id}`}>
+              <SearchOutlined />
+            </Link>
+          </Icon>
+          {/* <Icon>
                     <FavoriteBorderOutlined />
-                </Icon>
-            </Info>
-        </Container>
+                </Icon> */}
+        </Info>
+      </Container>
     );
 };
 

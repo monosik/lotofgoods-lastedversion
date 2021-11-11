@@ -13,7 +13,7 @@ import {
   
   const Container = styled.div`
     display: flex;
-    background-color: #fcf5f5;
+    background-color: #f6bd60;
     ${mobile({ flexDirection: "column" })}
   `;
   
@@ -90,34 +90,67 @@ import {
       <Container>
         <Left>
           <Logo>A Lot Of Goods</Logo>
-          <Desc>
-            
-          </Desc>
+          <Desc></Desc>
           <SocialContainer>
-            <a href="https://www.facebook.com/Fufu-the-Cat-100946312389408" style={{textDecoration: 'none'}}>
-            <SocialIcon color="3B5999">
-              <Facebook/>
-            </SocialIcon>
+            <a
+              href="https://www.facebook.com/Fufu-the-Cat-100946312389408"
+              style={{ textDecoration: "none" }}
+              target="_blank"
+            >
+              <SocialIcon color="3B5999">
+                <Facebook />
+              </SocialIcon>
             </a>
           </SocialContainer>
         </Left>
         <Center>
           <Title>Useful Links</Title>
           <List>
-            <ListItem>Home</ListItem>
-            <ListItem>Indoor Item</ListItem>
-            <ListItem>Sanitizer</ListItem>
-            <ListItem>Medical Tools</ListItem>
+            <ListItem>
+              <Link
+                to={`/`}
+                style={{ textDecoration: "none", color: "#404040" }}
+              >
+                Home
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                to={`/productlist/Indoor`}
+                style={{ textDecoration: "none", color: "#404040" }}
+              >
+                Indoor Item
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                to={`/productlist/Sanitizer`}
+                style={{ textDecoration: "none", color: "#404040" }}
+              >
+                Sanitizer
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                to={`/productlist/Medical-tools`}
+                style={{ textDecoration: "none", color: "#404040" }}
+              >
+                Medical Tools
+              </Link>
+            </ListItem>
           </List>
         </Center>
         <Right>
           <Title>Contact</Title>
           <ContactItem>
-            <a href="https://www.facebook.com/Fufu-the-Cat-100946312389408" style={{textDecoration: 'none', color: 'black'}}>
-              <Facebook style={{marginRight:"10px"}}
-              />Fufu The Cat
+            <a
+              href="https://www.facebook.com/Fufu-the-Cat-100946312389408"
+              style={{ textDecoration: "none", color: "#404040" }}
+              target="_blank"
+            >
+              <Facebook style={{ marginRight: "10px" }} />
+              Fufu The Cat
             </a>
-            
           </ContactItem>
         </Right>
       </Container>
